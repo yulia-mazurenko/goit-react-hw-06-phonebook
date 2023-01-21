@@ -11,10 +11,6 @@ import {
   InputNumber,
 } from './ContactForm.styled';
 
-import MaskedInput from 'react-text-mask';
-
-import { PatternFormat } from 'react-number-format';
-
 const phoneNumberMask = [
   '(',
   /[0-9]/,
@@ -78,21 +74,12 @@ export default function ContactForm({ onSubmitForm, onGetId }) {
         </Label>
         <Label htmlFor={contactNumberIid}>
           Number
-          <Field
-            as={PatternFormat}
-            name="number"
-            format="(###) ### ## ##"
-            allowEmptyFormatting
-            mask="_"
-          >
+          <Field name="number" id={contactNumberIid} type="text" required>
             {({ field }) => (
               <InputNumber
                 mask={phoneNumberMask}
-                as={MaskedInput}
-                id={contactNumberIid}
-                type="text"
                 {...field}
-                required
+                placeholder="(___) ___-__-__"
               />
             )}
           </Field>
