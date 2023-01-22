@@ -1,8 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Field, Formik } from 'formik';
 import * as yup from 'yup';
-import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid';
+
 import FormError from './FormError';
+import { addContact } from '../../redux/features/contacts/contactsSlice';
 import {
   FormStyle,
   Label,
@@ -29,7 +32,6 @@ const phoneNumberMask = [
   /\d/,
 ];
 
-//----------with Formik-------------------------------------
 const schema = yup.object().shape({
   name: yup.string().required('Please, enter correct name'),
   number: yup
@@ -42,12 +44,13 @@ const initialValues = {
   number: '',
 };
 
-export default function ContactForm({ onSubmitForm, onGetId }) {
-  const contactId = onGetId();
-  const contactNumberIid = onGetId();
+export default function ContactForm() {
+  const contactId = nanoid();
+  const contactNumberIid = nanoid();
+  const dispatch = useDispatch();
 
   const handleFormSubmit = (values, { resetForm }) => {
-    onSubmitForm(values);
+    dispatch(addContact(values));
 
     resetForm();
   };
@@ -90,7 +93,3 @@ export default function ContactForm({ onSubmitForm, onGetId }) {
     </Formik>
   );
 }
-
-ContactForm.propTypes = {
-  onSubmitForm: PropTypes.func.isRequired,
-};

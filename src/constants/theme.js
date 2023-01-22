@@ -18,8 +18,8 @@ export const theme = {
   },
 
   sizes: {
-    button: '150px',
-    form: '350px',
+    button: '120px',
+    form: '250px',
     input: '250px',
     wrapper: '300px',
   },
@@ -43,7 +43,7 @@ export const theme = {
     none: 'none',
     normal: '1px solid',
     bold: '3px solid',
-    active: "2px solid"
+    active: '2px solid',
   },
   radii: {
     none: '0',

@@ -6,10 +6,8 @@ export const FormStyle = styled(Form)`
   display: flex;
   flex-direction: column;
   gap: ${p => p.theme.space[4]}px;
-  margin-bottom: ${p => p.theme.space[4]}px;
+  margin-bottom: ${p => p.theme.space[5]}px;
   width: ${p => p.theme.sizes.form};
-  border: ${p => p.theme.borders.normal};
-  border-color: ${p => p.theme.colors.accentColor};
 `;
 
 export const Label = styled.label`
@@ -55,6 +53,8 @@ export const InputNumber = styled(MaskedInput)`
 
 export const Button = styled.button`
   width: ${p => p.theme.sizes.button};
+  margin-left: auto;
+  margin-right: auto;
   font-family: ${p => p.theme.fonts.body};
   font-weight: bold;
 

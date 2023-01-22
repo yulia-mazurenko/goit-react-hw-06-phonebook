@@ -6,6 +6,7 @@ export const PhoneBookTitle = styled.h1`
   color: ${p => p.theme.colors.accentColor};
 
   margin-bottom: ${p => p.theme.space[3]}px;
+  align-items: center;
 `;
 
 export const ListTitle = styled.h2`
@@ -17,6 +18,8 @@ export const ListTitle = styled.h2`
 `;
 
 export const Wrapper = styled.div`
+  margin-right: auto;
+  margin-left: auto;
   padding: 30px;
   width: ${p => p.theme.sizes.wrapper};
 `;
