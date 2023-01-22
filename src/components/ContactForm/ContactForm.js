@@ -77,9 +77,12 @@ export default function ContactForm() {
         </Label>
         <Label htmlFor={contactNumberIid}>
           Number
-          <Field name="number" id={contactNumberIid} type="tel" required>
+          <Field name="number">
             {({ field }) => (
               <InputNumber
+                id={contactNumberIid}
+                required
+                type="tel"
                 mask={phoneNumberMask}
                 {...field}
                 placeholder="(___) ___-__-__"
